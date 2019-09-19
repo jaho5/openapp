@@ -1,0 +1,15 @@
+const express = require('express');
+const path = require('path');
+
+const app = express();
+
+// An api endpoint that returns a short list of items
+app.get('/api/getList', (req,res) => {
+  var list = ["item1", "item2", "item3"];
+  res.json(list);
+  console.log('Sent list of items');
+});
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
